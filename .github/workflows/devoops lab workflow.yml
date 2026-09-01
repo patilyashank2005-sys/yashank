@@ -1,13 +1,16 @@
 name: devoops lab workflow
 on:
-  workflow_dispatch: #allows manaual trigger from github ui
+  workflow_dispatch:   # manual trigger
+  push:
+    branches:
+      - main
+
 jobs:
   echo-steps:
-
     runs-on: ubuntu-latest
     steps:
       - name: first step
-        run : echo "this is the first step"
-       - name : second step
-        run : echo "this is the first step"
+        run: echo "this is the first step"
+      - name: second step
+        run: echo "this is the second step"
   
